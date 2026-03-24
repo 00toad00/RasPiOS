@@ -85,8 +85,6 @@ el_check:
     ldr     x2, =boot_el
     str     x0, [x2]
 
-    b el_check_el1
-
     // skipped
     cmp     x0, #2
     beq     el_check_el2
