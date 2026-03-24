@@ -132,6 +132,7 @@ FsStatus fs_unmount(uint8_t part, MemoryMap *Mmap, FileSystem *Fs) {
     return FS_SUCCESS;
 }
 
+/*
 void *fs_load_file(const string path, uint8_t part, MemoryMap *Mmap, FileSystem *Fs, Framebuffer *Fb) { 
     if (Fs->Mbr->entry[part].partition_type != MBR_PARTITION_TYPE_FAT32_LBA) { return (void*)FS_NO_FS_SUPPORT; }
     if (Fs->FAT[part] == 0) { return (void*)FS_PART_NOT_MOUNTED; }
@@ -163,7 +164,6 @@ void *fs_load_file(const string path, uint8_t part, MemoryMap *Mmap, FileSystem 
     return (void*)FS_SUCCESS;
 }
 
-/*
 FsStatus fs_create_file(const string path, uint8_t part, MemoryMap *Mmap, FileSystem *Fs) {
     uint16_t bps = (uint16_t)fs_get_info(FS_GET_BYTES_PER_SECTOR, Fs, part);
     uint8_t spc = (uint8_t)fs_get_info(FS_GET_SECTORS_PER_CLUSTER, Fs, part);
